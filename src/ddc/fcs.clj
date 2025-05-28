@@ -138,8 +138,8 @@
         (fs/delete config-f)))))
 
 (defn assoc-space-after
-  [[t1 {ws "ws" :as _t2}]]
-  (assoc t1 "ws" (or ws "0")))
+  [[t1 {ws "ws" :as t2}]]
+  (assoc t1 "ws" (if t2 (or ws "1") "0")))
 
 (defn parse-tokens
   [indices tokens]
